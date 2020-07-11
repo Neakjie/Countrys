@@ -1,0 +1,29 @@
+<table class="country-table">
+    <th *ngFor="let country of titles">{{country | uppercase}}</th>
+    <tr *ngFor="let country of countrys">
+        <td>{{country.name}}</td>
+        <td>{{country.topLevelDomain}}</td>
+        <td>{{country.alpha2Code}}</td>
+        <td>{{country.alpha3Code}}</td>
+        <td>{{country.callingCodes}}</td>
+        <td>{{country.capital}}</td>
+        <td>{{country.altSpellings}}</td>
+        <td>{{country.region}}</td>
+        <td>{{country.subregion}}</td>
+        <td>{{country.population}}</td>
+        <td>{{country.latlng}}</td>
+        <td>{{country.demonym}}</td>
+        <td>{{country.area}}</td>
+        <td>{{country.gini}}</td>
+        <td>{{country.timezones}}</td>
+        <td>{{country.borders}}</td>
+        <td>{{country.nativeName}}</td>
+        <td>{{country.numericCode}}</td>
+        <td>{{country.currencies}}</td>
+        <td>{{country.languages}}</td>
+        <td>
+            {{translationObjectItem(country.translations)}}
+        </td>
+        <td>{{country.relevance}}</td>
+    </tr>
+</table>
