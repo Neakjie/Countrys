@@ -1,6 +1,31 @@
+.country-search-engine {
+    display: flex;
+    flex-direction: column;
+    .search-form {
+        margin: 10rem 5rem 10rem 5rem;
+        display: flex;
+        flex-direction: row;
+        input {
+            width: 75%;
+            font-size: 1.5rem;
+            padding: 1rem 0 1rem 1rem;
+        }
+        .search-button {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-left: 1rem;
+            padding: 1rem;
+        }
+    }
+}
+
 .country-table {
+    font-size: 1rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 200;
     th {
         border: .5rem solid #0a0a09;
+        border-radius: 5px;
     }
     td {
         border: .1rem solid #efefef;
