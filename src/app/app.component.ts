@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   searchForm = new FormGroup({});
   countrys: any;
   titles:any;
+  subsciptions:Subscription;
   constructor(private httpClient:HttpClient, private fb: FormBuilder){}
 
   ngOnInit(): void {
@@ -29,37 +30,36 @@ export class AppComponent implements OnInit {
     this.searchForm = this.fb.group({
       searchCountry:["",]
     })
-
+   this.findCountry()
   }
 
-  findCountry(controlName:string){
-    if(this.searchForm.get(controlName).value){
-      this.searchedName = this.searchForm.get(controlName).value
-    }
-    this.searchedCountry = this.countrys.filter(value => value.alpha2Code === this.searchedName ||
-                                                value.alpha2Code === this.searchedName.toUpperCase() ||
-                                                value.capital === this.searchedName ||
-                                                value.capital.toLowerCase() === this.searchedName ||
-                                                value.name.toLowerCase() === this.searchedName ||
-                                                value.name === this.searchedName)
-    console.log("country name:",this.searchedCountry);
-    if(this.searchedCountry.length === 0){
-      console.log("no Such Country Found");
-
-    }
-
+  findCountry(){
+    this.subsciptions = this.searchForm.valueChanges.subscribe(data=>{
+      if(data){
+        let result = []
+        this.countrys.forEach(value => {
+          if(value.name.toLowerCase().includes(data.searchCountry)){
+            result.push(value)
+          }
+          return result
+          });
+          this.searchedCountry = result
+      }
+    })
   }
-
   cleanCountry(controlName:string){
-    this.searchedCountry = null;
-    this.searchForm.get('searchCountry').setValue("");
+    if(this.searchForm.get(controlName)){
+      this.searchForm.get(controlName).setValue('')
+    }
+    this.searchedCountry = [];
     this.searchedName = "";
+
   }
 
   getCountrys():Observable<any>{
     let headers = new HttpHeaders({
       "x-rapidapi-host": "restcountries-v1.p.rapidapi.com",
-      "x-rapidapi-key": ["your api key"]
+      "x-rapidapi-key": "your api key"
     })
     let options = { headers: headers,
                   body:{}

@@ -1,8 +1,10 @@
 <form class="country-search-engine" [formGroup]="searchForm">
     <div class="search-form">
         <input type="text" placeholder="Search Country Info" formControlName="searchCountry">
-        <button class="search-button" (click)="findCountry('searchCountry')">Find</button>
-        <button class="search-button" (click)="cleanCountry('searchCountry')">Clear</button>
+
+        <button class="clear-button search-button" (click)="cleanCountry('searchCountry')">Clear
+              <span class="clear-button-sudo"></span>
+            </button>
     </div>
 
     <div *ngIf="!searchedCountry || searchedCountry.length === 0">

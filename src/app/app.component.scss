@@ -15,7 +15,153 @@
             font-size: 1.5rem;
             margin-left: 1rem;
             padding: 1rem;
+            border-radius: 5px;
+            border: none;
+            box-shadow: -2px -2px 4px 1px inset gray, -1px -1px 6px 1px gainsboro;
         }
+        .search-button:hover {
+            box-shadow: -2px -2px 4px 1px gray, -1px -1px 6px 1px gainsboro;
+            .clear-button-sudo::after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 20px;
+                height: 40px;
+                z-index: 200;
+                border-radius: 100%;
+                border-right: 2px solid brown;
+                border-left: 2px solid transparent;
+                border-top: 2px solid transparent;
+                border-bottom: 2px solid transparent;
+                transform: rotate(-45deg) translate3d(61px, -6px, 0);
+            }
+            .clear-button-sudo::before {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 20px;
+                height: 40px;
+                z-index: 200;
+                border-radius: 100%;
+                border-right: 2px solid transparent;
+                border-left: 2px solid brown;
+                border-top: 2px solid transparent;
+                border-bottom: 2px solid transparent;
+                transform: rotate(-45deg) translate3d(16px, -25px, 0);
+            }
+        }
+        .clear-button::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 20px;
+            height: 40px;
+            z-index: 200;
+            border-radius: 100%;
+            border-right: 2px solid palevioletred;
+            border-left: 2px solid transparent;
+            border-top: 2px solid transparent;
+            border-bottom: 2px solid transparent;
+            transform: rotate(45deg) translate3d(7px, -47px, 0);
+        }
+        .clear-button::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 20px;
+            height: 40px;
+            z-index: 200;
+            border-radius: 100%;
+            border-right: 2px solid transparent;
+            border-left: 2px solid palevioletred;
+            border-top: 2px solid transparent;
+            border-bottom: 2px solid transparent;
+            transform: rotate(45deg) translate3d(-19px, -9px, 0);
+        }
+        .clear-button-sudo::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 20px;
+            height: 40px;
+            z-index: 200;
+            border-radius: 100%;
+            border-right: 2px solid rgb(60, 212, 154);
+            border-left: 2px solid transparent;
+            border-top: 2px solid transparent;
+            border-bottom: 2px solid transparent;
+            transform: rotate(-45deg) translate3d(61px, -6px, 0);
+        }
+        .clear-button-sudo::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 20px;
+            height: 40px;
+            z-index: 200;
+            border-radius: 100%;
+            border-right: 2px solid transparent;
+            border-left: 2px solid rgb(60, 212, 154);
+            border-top: 2px solid transparent;
+            border-bottom: 2px solid transparent;
+            transform: rotate(-45deg) translate3d(16px, -25px, 0);
+        }
+        .clear-button:hover::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 20px;
+            height: 40px;
+            z-index: 200;
+            border-radius: 100%;
+            border-right: 2px solid rgb(51, 78, 68);
+            border-left: 2px solid transparent;
+            border-top: 2px solid transparent;
+            border-bottom: 2px solid transparent;
+            transform: rotate(45deg) translate3d(7px, -47px, 0);
+        }
+        .clear-button:hover::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 20px;
+            height: 40px;
+            z-index: 200;
+            border-radius: 100%;
+            border-right: 2px solid transparent;
+            border-left: 2px solid rgb(51, 78, 68);
+            border-top: 2px solid transparent;
+            border-bottom: 2px solid transparent;
+            transform: rotate(45deg) translate3d(-19px, -9px, 0);
+        }
+        // .clear-button-sudo:hover::after {
+        //     content: '';
+        //     display: block;
+        //     position: absolute;
+        //     width: 20px;
+        //     height: 40px;
+        //     z-index: 200;
+        //     border-radius: 100%;
+        //     border-right: 2px solid brown;
+        //     border-left: 2px solid transparent;
+        //     border-top: 2px solid transparent;
+        //     border-bottom: 2px solid transparent;
+        //     transform: rotate(-45deg) translate3d(61px, -6px, 0);
+        // }
+        // .clear-button-sudo:hover::before {
+        //     content: '';
+        //     display: block;
+        //     position: absolute;
+        //     width: 20px;
+        //     height: 40px;
+        //     z-index: 200;
+        //     border-radius: 100%;
+        //     border-right: 2px solid transparent;
+        //     border-left: 2px solid brown;
+        //     border-top: 2px solid transparent;
+        //     border-bottom: 2px solid transparent;
+        //     transform: rotate(-45deg) translate3d(16px, -25px, 0);
+        // }
     }
 }
 
