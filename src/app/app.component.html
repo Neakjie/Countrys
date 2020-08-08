@@ -10,13 +10,15 @@
     <div *ngIf="!searchedCountry || searchedCountry.length === 0">
         <table class="country-table">
             <th *ngFor="let country of titles">{{country | uppercase}}</th>
+
             <tr *ngFor="let country of countrys">
-                <td>{{country.name}}</td>
+                <td class="clickable-td" (click)="navigateToNewPage('https://en.wikipedia.org/wiki/',country.name)">{{country.name}}</td>
                 <td>{{country.topLevelDomain}}</td>
                 <td>{{country.alpha2Code}}</td>
                 <td>{{country.alpha3Code}}</td>
                 <td>{{country.callingCodes}}</td>
-                <td>{{country.capital}}</td>
+                <td *ngIf="country.capital" [ngClass]="{'clickable-td':country.capital}" (click)="navigateToNewPage('https://en.wikipedia.org/wiki/',country.capital)">{{country.capital}}</td>
+                <td *ngIf="!country.capital" class="no-capital">{{noCapital}}</td>
                 <td>{{country.altSpellings}}</td>
                 <td>{{country.region}}</td>
                 <td>{{country.subregion}}</td>
@@ -36,18 +38,20 @@
                 </td>
                 <td>{{country.relevance}}</td>
             </tr>
+
         </table>
     </div>
     <div *ngIf="searchedCountry">
         <table class="country-table">
             <th *ngFor="let country of titles">{{country | uppercase}}</th>
             <tr *ngFor="let country of searchedCountry">
-                <td>{{country.name}}</td>
+                <td class="clickable-td" (click)="navigateToNewPage('https://en.wikipedia.org/wiki/',country.name)">{{country.name}}</td>
                 <td>{{country.topLevelDomain}}</td>
                 <td>{{country.alpha2Code}}</td>
                 <td>{{country.alpha3Code}}</td>
                 <td>{{country.callingCodes}}</td>
-                <td>{{country.capital}}</td>
+                <td *ngIf="country.capital" class="clickable-td" (click)="navigateToNewPage('https://en.wikipedia.org/wiki/',country.capital)">{{country.capital}}</td>
+                <td *ngIf="!country.capital" class="no-capital">{{noCapital}}</td>
                 <td>{{country.altSpellings}}</td>
                 <td>{{country.region}}</td>
                 <td>{{country.subregion}}</td>

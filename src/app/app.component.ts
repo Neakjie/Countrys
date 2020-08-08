@@ -15,9 +15,11 @@ export class AppComponent implements OnInit {
   countrys: any;
   titles:any;
   subsciptions:Subscription;
+  noCapital:string;
   constructor(private httpClient:HttpClient, private fb: FormBuilder){}
 
   ngOnInit(): void {
+    this.noCapital = "This country has no capital";
     this.getCountrys().subscribe(data=>{
       if(data){
         this.countrys = data
@@ -76,6 +78,12 @@ translationObjectItem(objectItems:Object){
       }
     })
     return items
+  }
+}
+
+navigateToNewPage(url:string,name:string){
+  if(name){
+    window.open(url+name, "_blank");
   }
 }
 
