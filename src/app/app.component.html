@@ -74,3 +74,18 @@
         </table>
     </div>
 </form>
+
+<div class="menu">
+    <div #home class="home" (mouseover)="hover('home')" (mouseout)="remove('home')">
+        <div class="front">Home</div>
+        <div class="move-part home-remove"></div>
+    </div>
+    <div #project class="project" (mouseover)="hover('project')" (mouseout)="remove('project')">
+        <div class="front">Doom</div>
+        <div class="project-move-part project-remove"></div>
+    </div>
+    <div #about class="about" (mouseover)="hover('about')" (mouseout)="remove('about')">
+        <div class="front">Bloom</div>
+        <div class="about-move-part about-remove"></div>
+    </div>
+</div>
